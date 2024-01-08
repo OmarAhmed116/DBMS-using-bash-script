@@ -8,7 +8,7 @@ createDB(){
 while true; do
 read -p "Enter the name of the new database: " dbname
 
-if [[ -d ~/Databases/"$dbname" ]]; then
+if [[ -d ~/Databases/$dbname ]]; then
 echo "Database '$dbname' already exists."
 main_menu
 
@@ -35,8 +35,7 @@ done
 listDB(){
 if [[ $(ls ~/Databases) ]]
 then
-	cd ~/Databases
-	ls -p | grep /
+	ls -p ~/Databases | grep /
 	main_menu
 else
 	echo "No Databases Created yet."
@@ -356,7 +355,7 @@ read -p "Enter New Value: " new
 			fi
 		# ---------------------------------------
 		else
-		echo "Error: This Value ($old) not exist, Enter Exist Value2"	
+		echo "Error: This Value ($old) not exist, Enter Exist Value"	
 		continue
 		fi
 	# ---------------------------------------	
